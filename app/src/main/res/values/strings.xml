@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">UBP Daily</string>
+    <string name="app_name">Scanner UBP Techno Day 3.0</string>
+    <string name="FACEBOOK_APP_ID">161501207843885</string>
+    <string name="ACCOUNT_KIT_CLIENT_TOKEN">a59e8db9f7c87332d164e66d7b4c1906</string>
     <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
         AIzaSyDAqCnVhnwu59YRWVCQ3hN9bk0MTHVLqt4
     </string>
@@ -94,4 +96,7 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

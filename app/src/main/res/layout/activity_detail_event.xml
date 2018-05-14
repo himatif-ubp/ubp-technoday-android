@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.gakendor.ubpdaily.DetailEvent">
+    tools:context="org.gakendor.ubpdaily.activity.DetailEvent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,11 +19,10 @@
             android:layout_height="200dp">
 
             <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/background" />
+                android:id="@+id/iv_thumb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
 
             <LinearLayout
                 android:id="@+id/linearLayout2"
@@ -38,20 +37,20 @@
                     android:background="@color/colorPrimary">
 
                     <ImageView
-                        android:id="@+id/imageView4"
+                        android:id="@+id/iv_finish"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         app:srcCompat="@drawable/ic_back" />
 
                     <TextView
-                        android:id="@+id/textView5"
+                        android:id="@+id/tv_title"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentRight="true"
                         android:layout_alignParentTop="true"
-                        android:layout_toRightOf="@+id/imageView4"
+                        android:layout_toRightOf="@+id/iv_finish"
                         android:padding="10dp"
                         android:text="SEMINAR NASIONAL DIGITAL STARTUP  \nIoT - UBP TECHNO DAY 2.0"
                         android:textColor="#FFF"
@@ -63,7 +62,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/textView18"
+                android:id="@+id/tv_kuota"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -77,7 +76,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/tv_harga"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -120,6 +119,21 @@
                     android:background="#eee"
                     android:orientation="vertical">
 
+                    <TextView
+                        android:id="@+id/tv_nav"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/imageView2"
+                        android:background="@color/colorPrimaryDark"
+                        android:padding="10dp"
+                        android:text="PETUNJUK ARAH"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -136,15 +150,14 @@
                             app:srcCompat="@drawable/ic_time" />
 
                         <TextView
-                            android:id="@+id/textView6"
+                            android:id="@+id/tv_date"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
                             android:layout_marginLeft="10dp"
-                            android:layout_toRightOf="@+id/imageView2"
-                            android:text="Sunday, October 15, 2017 \nfrom 8:00 PM to 11:30 PM (WIB)" />
+                            android:layout_toRightOf="@+id/imageView2" />
 
                     </RelativeLayout>
 
@@ -156,7 +169,7 @@
                         android:padding="16dp">
 
                         <ImageView
-                            android:id="@+id/imageView2"
+                            android:id="@+id/imageView21"
                             android:layout_width="30dp"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
@@ -165,15 +178,14 @@
                             app:srcCompat="@drawable/ic_location" />
 
                         <TextView
-                            android:id="@+id/textView6"
-                            android:layout_width="wrap_content"
+                            android:id="@+id/tv_alamat"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
-                            android:layout_marginLeft="10dp"
-                            android:layout_toRightOf="@+id/imageView2"
-                            android:text="Celecton Blue Karawang Hotel \nJl. Raya Teluk Jambe No. 8 Sukakarya \nKarawang 41361 Indonesia" />
+                            android:layout_toEndOf="@+id/imageView21"
+                            android:layout_toRightOf="@+id/imageView21" />
 
                     </RelativeLayout>
 
@@ -182,9 +194,15 @@
                         android:layout_height="wrap_content"
                         android:background="@color/white"
                         android:orientation="vertical"
+                        android:padding="16dp"
                         android:paddingLeft="16dp"
                         android:paddingRight="16dp"
                         android:paddingTop="16dp">
+
+                        <ImageView
+                            android:id="@+id/iv_image_show"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp" />
 
                         <TextView
                             android:id="@+id/textView10"
@@ -198,10 +216,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="150dp"
                             android:scaleType="fitCenter"
+                            android:visibility="gone"
                             app:srcCompat="@drawable/background" />
 
                         <TextView
-                            android:id="@+id/textView12"
+                            android:id="@+id/tv_deskripsi"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="UBP TECHNO DAY 2.0 Merupakan sebuah event teknologi tahunan kedua yang digagas oleh Himpunan Mahasiswa Teknik Informatika, Fakultas Teknologi dan Ilmu Komputer, Universitas Buana Perjuangan Karawang yg menyuguhkan berbagai rangkaian acara teknologi." />
@@ -213,7 +232,8 @@
                         android:layout_height="match_parent"
                         android:background="@color/white"
                         android:orientation="vertical"
-                        android:padding="16dp">
+                        android:padding="16dp"
+                        android:visibility="gone">
 
                         <TextView
                             android:id="@+id/textView13"
@@ -270,7 +290,7 @@
                             android:orientation="vertical">
 
                             <ImageView
-                                android:id="@+id/imageView6"
+                                android:id="@+id/imageView61"
                                 android:layout_width="match_parent"
                                 android:layout_height="100dp"
                                 android:layout_alignParentTop="true"
@@ -279,7 +299,7 @@
                                 app:srcCompat="@drawable/larry_page" />
 
                             <TextView
-                                android:id="@+id/textView14"
+                                android:id="@+id/textView141"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
@@ -289,14 +309,14 @@
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/textView16"
+                                android:id="@+id/textView161"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="QNAP Indonesia"
                                 android:textAlignment="center" />
 
                             <TextView
-                                android:id="@+id/textView17"
+                                android:id="@+id/textView171"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Session : Introduction to IOT with QNAP"
@@ -315,13 +335,13 @@
                     android:orientation="vertical"></LinearLayout>
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/bt_register"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:background="@color/colorPrimary"
                     android:padding="16dp"
-                    android:text="REGISTER"
+                    android:text="DAFTAR"
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textStyle="bold" />

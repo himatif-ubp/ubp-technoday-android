@@ -16,13 +16,13 @@
     <item
         android:id="@+id/act_your_events"
         android:enabled="true"
-        android:icon="@drawable/ic_your_event"
+        android:icon="@drawable/ic_event"
         android:title="Your Events"
         app:showAsAction="always" />
     <item
         android:id="@+id/act_setting"
         android:enabled="true"
-        android:icon="@drawable/ic_setting"
+        android:icon="@drawable/ic_your_event"
         android:title="Setting"
         app:showAsAction="always" />
 </menu>
